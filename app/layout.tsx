@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "dialkit/styles.css";
+import { DialRoot } from "dialkit";
 import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
@@ -27,6 +29,7 @@ export default function RootLayout({
           themes={["light", "dark"]}
         >
           {children}
+          <DialRoot />
         </ThemeProvider>
       </body>
     </html>
