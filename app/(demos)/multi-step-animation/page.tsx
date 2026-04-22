@@ -95,7 +95,11 @@ export default function Page() {
             className="relative w-90 overflow-clip rounded-12 bg-white shadow-menu dark:bg-gray-2"
           >
             <div className="h-auto" ref={measureRef}>
-              <AnimatePresence custom={direction} mode="popLayout">
+              <AnimatePresence
+                custom={direction}
+                initial={false}
+                mode="popLayout"
+              >
                 <motion.div
                   animate={{ x: 0, opacity: 1 }}
                   className="h-2/3 p-4 pb-0"
