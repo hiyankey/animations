@@ -112,7 +112,7 @@ export default function Page() {
             </motion.div>
           ) : (
             <motion.button
-              className="h-7 w-28 flex-center overflow-clip bg-white px-3 text-14 shadow-small dark:bg-gray-2"
+              className="h-7 flex-center overflow-clip bg-white px-3 text-14 shadow-small dark:bg-gray-2"
               layoutId="wrapper"
               onClick={() => {
                 setIsOpen(true);
