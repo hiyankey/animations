@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "dialkit/styles.css";
+import { DialRoot } from "dialkit";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function RootLayout({
           themes={["light", "dark"]}
         >
           {children}
+          <DialRoot />
         </ThemeProvider>
       </body>
     </html>
