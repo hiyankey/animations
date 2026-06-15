@@ -1,0 +1,84 @@
+.spinner {
+  opacity: 0.65;
+  --spinner-animation-duration: calc(0.8s * var(--spinner-speed, 1));
+  display: block;
+  position: relative;
+}
+
+.spinner[data-size="14"] {
+  width: 14px;
+  height: 14px;
+}
+
+.spinner[data-size="16"] {
+  width: 16px;
+  height: 16px;
+}
+
+.spinner-leaf {
+  width: 12.5%;
+  height: 100%;
+  animation: spinner-leaf-fade var(--spinner-animation-duration) linear infinite;
+  position: absolute;
+  top: 0;
+  left: 43.75%;
+}
+
+.spinner-leaf:before {
+  content: "";
+  background-color: currentColor;
+  border-radius: 3px;
+  width: 100%;
+  height: 30%;
+  display: block;
+}
+
+.spinner-leaf:where(:first-child) {
+  animation-delay: calc(-8 / 8 * var(--spinner-animation-duration));
+  transform: rotate(0);
+}
+
+.spinner-leaf:where(:nth-child(2)) {
+  animation-delay: calc(-7 / 8 * var(--spinner-animation-duration));
+  transform: rotate(45deg);
+}
+
+.spinner-leaf:where(:nth-child(3)) {
+  animation-delay: calc(-6 / 8 * var(--spinner-animation-duration));
+  transform: rotate(90deg);
+}
+
+.spinner-leaf:where(:nth-child(4)) {
+  animation-delay: calc(-5 / 8 * var(--spinner-animation-duration));
+  transform: rotate(135deg);
+}
+
+.spinner-leaf:where(:nth-child(5)) {
+  animation-delay: calc(-4 / 8 * var(--spinner-animation-duration));
+  transform: rotate(180deg);
+}
+
+.spinner-leaf:where(:nth-child(6)) {
+  animation-delay: calc(-3 / 8 * var(--spinner-animation-duration));
+  transform: rotate(225deg);
+}
+
+.spinner-leaf:where(:nth-child(7)) {
+  animation-delay: calc(-2 / 8 * var(--spinner-animation-duration));
+  transform: rotate(270deg);
+}
+
+.spinner-leaf:where(:nth-child(8)) {
+  animation-delay: calc(-1 / 8 * var(--spinner-animation-duration));
+  transform: rotate(315deg);
+}
+
+@keyframes spinner-leaf-fade {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.25;
+  }
+}
