@@ -1,0 +1,27 @@
+.content[data-state="open"] {
+  animation: scaleIn 200ms ease-out;
+}
+
+.content[data-state="closed"] {
+  animation: scaleOut 200ms ease-out;
+}
+.content {
+  transform-origin: top center;
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes scaleOut {
+  to {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
