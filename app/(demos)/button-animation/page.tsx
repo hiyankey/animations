@@ -4,13 +4,14 @@ import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { useState } from "react";
 import { Spinner } from "@/app/ui/spinner/spinner";
 
+type ButtonState = "idle" | "loading" | "success";
 const buttonCopy = {
   idle: "Get access",
   loading: <Spinner />,
   success: "Access granted",
 };
 export default function Page() {
-  const [buttonState, setButtonState] = useState("idle");
+  const [buttonState, setButtonState] = useState<ButtonState>("idle");
   return (
     <MotionConfig transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}>
       <div className="min-h-dvh flex-center">
