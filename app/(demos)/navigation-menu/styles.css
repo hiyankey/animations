@@ -1,0 +1,84 @@
+.viewport[data-state="open"] {
+  animation: scaleIn 200ms ease-out;
+}
+
+.viewport[data-state="closed"] {
+  animation: scaleOut 200ms ease-out;
+}
+.viewport {
+  transform-origin: top center;
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes scaleOut {
+  to {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitToRight {
+  to {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+@keyframes exitToLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+.content {
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+}
+
+.content[data-motion="from-start"] {
+  animation-name: enterFromLeft;
+}
+
+.content[data-motion="from-end"] {
+  animation-name: enterFromRight;
+}
+
+.content[data-motion="to-start"] {
+  animation-name: exitToLeft;
+}
+
+.content[data-motion="to-end"] {
+  animation-name: exitToRight;
+}
